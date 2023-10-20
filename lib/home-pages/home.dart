@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/home-pages/CategoriesWidget.dart';
 import 'package:flutter_application_1/home-pages/ItemWidget.dart';
+import 'package:flutter_application_1/home-pages/add.dart';
+import 'package:flutter_application_1/home-pages/noti.dart';
+import 'package:flutter_application_1/home-pages/profile.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class Myhome extends StatelessWidget {
@@ -16,9 +19,17 @@ class Myhome extends StatelessWidget {
       fontWeight: FontWeight.bold,
       color: Colors.black,
 )
-      ),actions: [IconButton(onPressed: (){}, icon: Icon(Icons.person))],
       ),
+      actions: [
+  IconButton(
+    onPressed: () {
+       Navigator.pushNamed(context, '/profile');
+    },
+    icon: Icon(Icons.person),
+  ),
+],
 
+      ),
       
       body: ListView(children: [
         //HomeAppBar(),
@@ -29,6 +40,7 @@ class Myhome extends StatelessWidget {
           color: Color(0xFFEDECF2),
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(35),
+            topRight: Radius.circular(35),
           )
         ),
         child: Column(children: [
@@ -59,7 +71,6 @@ class Myhome extends StatelessWidget {
               )
             ],),
           ),
-
           //Categories
 
         Container(
@@ -83,7 +94,7 @@ class Myhome extends StatelessWidget {
         Container(
           alignment: Alignment.centerLeft,
           margin: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-          child: Text("Best Selling",
+          child: Text("Items",
           style: TextStyle(
             fontSize: 25,
             fontWeight: FontWeight.bold,
@@ -98,7 +109,10 @@ class Myhome extends StatelessWidget {
         ),
       ],
       ),
+
+      
       bottomNavigationBar: Container(
+        color: Color.fromARGB(255, 247, 247, 247),
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 20,
@@ -112,10 +126,34 @@ class Myhome extends StatelessWidget {
             activeColor: Colors.black,
             padding: EdgeInsets.all(20),
           tabs: [
-            GButton(icon: Icons.home,),
-            GButton(icon: Icons.favorite,),
-            GButton(icon: Icons.card_travel),
-            GButton(icon: Icons.sms,),
+            GButton(icon: Icons.home,
+            onPressed: () {
+            Navigator.of(context).pushReplacement(MaterialPageRoute(
+              builder: (context) => Myhome(),
+            ));
+          },
+            ),
+            GButton(icon: Icons.add_box,
+          onPressed: () {
+            Navigator.of(context).pushReplacement(MaterialPageRoute(
+              builder: (context) => AddProductScreen(),
+            ));
+          },
+          ),
+            GButton(icon: Icons.notifications,
+            onPressed: () {
+            Navigator.of(context).pushReplacement(MaterialPageRoute(
+              builder: (context) => noti(),
+            ));
+          },  
+            ),
+            GButton(icon: Icons.message_rounded,
+          //   onPressed: () {
+          //   Navigator.of(context).push(MaterialPageRoute(
+          //     builder: (context) => SMS(),
+          //   ));
+          // },  
+            ),
           ],
         ),
         ),
@@ -123,3 +161,5 @@ class Myhome extends StatelessWidget {
     );
   }
 }
+
+
