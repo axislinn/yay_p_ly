@@ -44,6 +44,9 @@ class _editState extends State<edit> {
   void initState() {
     super.initState();
     productNameController.text=widget.product.title;
+    descritpionController.text=widget.product.description;
+    priceController.text = widget.product.price.toString();
+    quantityController.text=widget.product.quantity;
 }
 
   List<String> size = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];

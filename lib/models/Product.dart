@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Product {
-  final String image, title, description;
-  final int price, size, id;
+  final String image, title, description, name, disscount, left, info, size, quantity;
+  final int price, id;
   final Color color;
 
   Product(
@@ -12,42 +12,68 @@ class Product {
       required this.price,
       required this.size,
       required this.id,
-      required this.color});
+      required this.color,
+      required this.quantity,
+      required this.name,
+      required this.disscount,
+      required this.left,
+      required this.info,
+      });
 }
 
 List<Product> products = [
   Product(
       id: 1,
-      title: "Shoe",
-      price: 1200,
-      size: 12,
-      description: "Shoes",
-      image: "assets/1.png",
-      color: Color(0xFF3D82AE)),
+      title: "Hoodie",
+      name : "Sisburma Icon Hoodie ",
+      disscount: "-10%",
+      left: "Only 3",
+      info: "Sisburma Icon Hoodie",
+      price: 28000,
+      size: "Small",
+      description: "Air-Layer Hoodie က ဝတ်တဲ့အခါမှာ ပေါ့ပါးနေပင်မယ့် Heavyweight ဖြစ်နေတဲ့ Feeling ကို ပေးစွမ်းနေမှာဖြစ်လို့ အမြန်ဆုံးဝယ်ထားလိုက်တော့ခင်ဗျာ။",
+      image: "assets/hoodie.png",
+      quantity: "100",
+      color: Colors.transparent),
   Product(
       id: 2,
-      title: "Dress",
-      price: 234,
-      size: 8,
-      description: "Dress",
-      image: "assets/2.png",
-      color: Color(0xFFD3A984)),
+      title: " Rib Half-Zip Polo",
+      disscount: "-20%",
+      name : " Rib Half-Zip Polo",
+      left: "Only 5",
+      info: "Sisburma Rib \nHalf-Zip \nPolo has come.",
+      price: 22000,
+      size: "S",
+      description: "Brand New Color Addition of Sisburma Rib Half-Zip Polo has come.",
+      image: "assets/tshirt.png",
+      quantity: "2",
+      color: Colors.transparent),
   Product(
       id: 3,
-      title: "Shirt",
-      price: 234,
-      size: 10,
-      description: "Shirt",
-      image: "assets/3.png",
-      color: Color(0xFF989493)),
+      title: "X Knaing Tee",
+      disscount: "-25%",
+      left: "Only 20",
+      name : "X Knaing Tee",
+      info: "Urban Industry \nBasic T-Shirts ",
+      price: 23000,
+      size: "L",
+      description: "Sisburma X Knaing Collection Tee",
+      image: "assets/shirt.png",
+      quantity: "3",
+      color: Colors.transparent),
   Product(
       id: 4,
-      title: "Jacket",
-      price: 234,
-      size: 11,
-      description: "Jacket",
-      image: "assets/4.png",
-      color: Color(0xFFE6B398)),
+      title: "Jacket ",
+      disscount: "-30%",
+      left: "Only 7",
+      name : "Sisburma Jacket ",
+      info: "Sisburma Buttonless \nMelton Jacket ",
+      price: 38000,
+      size: "L",
+      description: "Buttonless Melton Jacket",
+      image: "assets/jacket.png",
+      quantity: "4",
+      color: Colors.transparent),
 ];
 
 String dummyText =

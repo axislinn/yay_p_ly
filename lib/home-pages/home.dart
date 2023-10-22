@@ -15,9 +15,9 @@ class Myhome extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text("STYLE FEED",
       style: TextStyle(
-      fontSize: 23,
+      fontSize: 25,
       fontWeight: FontWeight.bold,
-      color: Colors.black,
+      color: Color(0xFF0c222f),
 )
       ),
       actions: [
@@ -56,7 +56,7 @@ class Myhome extends StatelessWidget {
             child: Row(children: [
               Container(
                 margin: EdgeInsets.only(left: 5),
-                width: 300,
+                width: 250,
                 child: TextFormField(
                   decoration: InputDecoration(
                     border: InputBorder.none,
@@ -76,7 +76,7 @@ class Myhome extends StatelessWidget {
         Container(
           alignment: Alignment.centerLeft,
           margin: EdgeInsets.symmetric(
-            vertical: 15,
+            vertical: 5,
             horizontal: 10,
           ),
         child: Text(
@@ -93,7 +93,7 @@ class Myhome extends StatelessWidget {
 
         Container(
           alignment: Alignment.centerLeft,
-          margin: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+          margin: EdgeInsets.symmetric(vertical: 1, horizontal: 10),
           child: Text("Items",
           style: TextStyle(
             fontSize: 25,

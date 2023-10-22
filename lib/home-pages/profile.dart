@@ -97,7 +97,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
             child: CircleAvatar(
               radius: 60,
               backgroundColor: Colors.transparent,
-              backgroundImage: AssetImage('assets/profile_image.png'), // Replace with your image path
+              backgroundImage: AssetImage('assets/sislogo.png'), // Replace with your image path
             ),
           ),
 
@@ -243,7 +243,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             child: CircleAvatar(
               backgroundColor: Colors.transparent,
               radius: 60,
-              backgroundImage: AssetImage('assets/profile_image.png'), // Replace with your default image path
+              backgroundImage: AssetImage('assets/sislogo.png'), // Replace with your default image path
             ),
           ),
 
