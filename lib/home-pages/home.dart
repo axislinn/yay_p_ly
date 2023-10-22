@@ -6,6 +6,7 @@ import 'package:flutter_application_1/home-pages/add.dart';
 import 'package:flutter_application_1/home-pages/noti.dart';
 import 'package:flutter_application_1/home-pages/profile.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import '../UserChatBox/chatHome.dart';
 
 class Myhome extends StatelessWidget {
   const Myhome({super.key});
@@ -148,11 +149,11 @@ class Myhome extends StatelessWidget {
           },  
             ),
             GButton(icon: Icons.message_rounded,
-          //   onPressed: () {
-          //   Navigator.of(context).push(MaterialPageRoute(
-          //     builder: (context) => SMS(),
-          //   ));
-          // },  
+            onPressed: () {
+              Navigator.of(context).pushReplacement(MaterialPageRoute(
+              builder: (context) => ChatHome(),
+              ));
+            },
             ),
           ],
         ),

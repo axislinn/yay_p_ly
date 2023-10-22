@@ -2,20 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
-class User {
+class ProfileUser {
   late String name;
   late String email;
   late String phone;
   late String description;
 
-  User({
+  ProfileUser({
     required this.name,
     required this.email,
     required this.phone,
     required this.description,
   });
 
-  User.copy(User other) {
+  ProfileUser.copy(ProfileUser other) {
     name = other.name;
     email = other.email;
     phone = other.phone;
@@ -24,8 +24,8 @@ class User {
 }
 
 class UserProfileScreen extends StatefulWidget {
-  User user;
-  final Function(User) onSave;
+  ProfileUser user;
+  final Function(ProfileUser) onSave;
 
   UserProfileScreen(this.user, this.onSave);
 
@@ -34,19 +34,19 @@ class UserProfileScreen extends StatefulWidget {
 }
 
 class _UserProfileScreenState extends State<UserProfileScreen> {
-  Function(User) onSave;
+  Function(ProfileUser) onSave;
 
   _UserProfileScreenState({required this.onSave});
 
-  late User _editedUser;
+  late ProfileUser _editedUser;
 
   @override
   void initState() {
     super.initState();
-    _editedUser = User.copy(widget.user);
+    _editedUser = ProfileUser.copy(widget.user);
   }
 
-  void _saveChanges(User editedUser) {
+  void _saveChanges(ProfileUser editedUser) {
     setState(() {
       widget.user = editedUser;
     });
@@ -178,8 +178,8 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
 }
 
 class EditProfileScreen extends StatefulWidget {
-  final User user;
-  final Function(User) onSave;
+  final ProfileUser user;
+  final Function(ProfileUser) onSave;
 
   EditProfileScreen(this.user, this.onSave);
 
@@ -188,17 +188,17 @@ class EditProfileScreen extends StatefulWidget {
 }
 
 class _EditProfileScreenState extends State<EditProfileScreen> {
-  Function(User) onSave;
+  Function(ProfileUser) onSave;
 
   _EditProfileScreenState({required this.onSave});
 
-  late User _editedUser;
+  late ProfileUser _editedUser;
   XFile? _selectedImage; // Store the selected image file
 
   @override
   void initState() {
     super.initState();
-    _editedUser = User.copy(widget.user);
+    _editedUser = ProfileUser.copy(widget.user);
   }
 
   void _saveChanges() {
